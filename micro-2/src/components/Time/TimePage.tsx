@@ -26,15 +26,6 @@ export default class TimePage extends Component<object, StateI> {
     };
   }
 
-  // componentDidMount(): void {
-  //   this.state.time;
-  // }
-  // componentDidUpdate(prevState: Readonly<StateI>): void {
-  //   if (prevState.time !== this.state.time) {
-  //     this.state.time;
-  //   }
-  // }
-
   handleClick = () => {
     const data = this.state.time;
 
@@ -42,7 +33,7 @@ export default class TimePage extends Component<object, StateI> {
   };
 
   resetClick = () => {
-    this.setState({ result: 0 });
+    this.setState({ result: 0, time: "" });
   };
 
   checkConditon = (b: boolean) => {
@@ -50,8 +41,6 @@ export default class TimePage extends Component<object, StateI> {
   };
 
   render(): ReactNode {
-    // let checkCondition: boolean;
-
     let enteretCountDown: boolean;
     let resetCountDown: boolean;
 
@@ -61,7 +50,6 @@ export default class TimePage extends Component<object, StateI> {
         : 0;
     const check: number =
       typeof result === "number" ? new Date(result).getTime() : 0;
-    // console.log(check);
 
     if (check > 0) {
       resetCountDown = true;
@@ -71,10 +59,8 @@ export default class TimePage extends Component<object, StateI> {
       enteretCountDown = true;
     }
 
-    // console.log("result ;", this.state.result);
-
     return (
-      <div className="w-[600px] rounded-lg p-16 flex flex-col justify-center items-center gap-10 text-white border border-white">
+      <div className="w-[600px] rounded-lg p-16 mb-16 flex flex-col justify-center items-center gap-10 text-white border border-white">
         <h3 className="capitalize font-mono text-[26px]">
           enter the target date and time
         </h3>

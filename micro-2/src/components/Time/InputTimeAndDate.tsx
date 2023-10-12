@@ -36,6 +36,10 @@ export default class InputTimeAndDate extends Component<PropsInputI, StateI> {
     this.props.resetButton();
   };
 
+  onEndVideo() {
+    window.location.reload();
+  }
+
   render(): ReactNode {
     return (
       <>
@@ -66,7 +70,7 @@ export default class InputTimeAndDate extends Component<PropsInputI, StateI> {
         <section className="flex gap-7">
           {(this.props.resetCountDown && this.props.condition === true) ||
           (this.props.enteredCountDown && this.props.condition === false) ? (
-            <video width="120" height="140" autoPlay controls>
+            <video width="120" height="140" autoPlay onEnded={this.onEndVideo}>
               <source src={video} />
             </video>
           ) : null}
