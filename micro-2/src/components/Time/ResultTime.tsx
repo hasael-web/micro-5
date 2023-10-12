@@ -11,7 +11,7 @@ interface ICountDown {
 }
 
 export default class ResultTime extends Component<PropsI, ICountDown> {
-  private timerInterval: NodeJS.Timeout | null = null;
+  private timerInterval: ReturnType<typeof setTimeout> | null = null;
 
   constructor(props: PropsI) {
     super(props);
