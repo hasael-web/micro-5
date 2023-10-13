@@ -1,3 +1,3 @@
-import TimePage from "./Time/TimePage";
+import Home from "./Pages/Home";
 
-export { TimePage };
+export { Home };
