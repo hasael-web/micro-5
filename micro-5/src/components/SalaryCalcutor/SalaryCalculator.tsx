@@ -25,7 +25,7 @@ export default class SalaryCalculator extends Component<object, StateI> {
   //     this.handleInput;
   //   }
 
-  componentDidUpdate(prevProps: object, prevState: Readonly<StateI>): void {
+  componentDidUpdate( prevState: Readonly<StateI>): void {
     if (prevState.gajiPokok !== this.state.gajiPokok) {
       this.state.gajiPokok;
     }
